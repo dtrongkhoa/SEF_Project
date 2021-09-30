@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="../style/n9.css">
+    <title>Movies</title>
+</head>
+
+
+
+<body>
+##<heading> <a href="/"> IMDbootleg </a> </heading>
+##<ul>
+##<li><form method="post" action="/registerPage">
+##    <button class="button">Register</button>
+##</form></li>
+##<li><form method="post" action="/loginPage">
+##    <button class= "button">Login</button>
+##</form></li>
+##<li><form method="post" action="/showMoviesPage">
+##    <button class= "button">Movies</button>
+##</form></li>
+##<form method="post" action="/searchPage">
+##    <li><button class= "button">Search</button></li>
+##</form>
+##<form method="post" action="/logOut">
+##    <li><button class= "button">Log Out</button></li>
+##</form>
+##	<li style="color:white">$CURRENT_USER</li>
+##</ul>
+    #parse("public/layouts/header.vm")
+
+<h2>Movie Search:</h2>
+
+<div class= "search">
+<form method="post" action="/search">
+
+    <label for="title"><b>Title</b></label>
+    <input type="text" name ="title" >
+    <br><br>
+
+    <label for="PCo"><b>PCo</b></label>
+    <input type="text" name ="PCo" >
+    <br><br>
+
+    <label for="genre"><b>Genre</b></label>
+    <input type="text" name ="genre" >
+    <br><br>
+
+    <label for="year"><b>Year</b></label>
+    <input type="text" name ="year" >
+    <br><br>
+
+    <label for="director"><b>Director</b></label>
+    <input type="text" name ="director" >
+    <br><br>
+
+    <label for="actor"><b>Actor</b></label>
+    <input type="text" name ="actor" >
+    <br><br>
+
+    <input type="submit" value="Search">
+    <br><br>
+##</form>
+##
+##    #foreach($movie in $movies)
+##    <div class= "grid1"><b>$movie.title</b></div>
+##        ##        <a class="book" href="/movies/$movie.title">GOTO</a>
+##    <div class= "grid2">$movie.PCo</div>
+##    <div class= "grid3">$movie.genre</div>
+##    <div class= "grid4">$movie.year</div>
+##    <div class= "grid4">$movie.director</div>
+##    <div class= "grid4">$movie.actors</div>
+##
+##
+##    #end
+
+</div>
+
+ <footer> IMDbootleg, All Rights Reserved 2021. N9 Group </footer>
+ 
+</body>
+</html>

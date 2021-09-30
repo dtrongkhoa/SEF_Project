@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="../style/n9.css">
+    <title>Movies</title>
+</head>
+
+
+#parse("public/layouts/header.vm")
+<body>
+
+<h1> $header </h1>
+<div class= "container">
+	<div class= "grid1" style= "font-size: 30px;"> Movie Title </div> 
+	<div class= "grid2" style= "font-size: 30px;">Production Company</div>
+	<div class= "grid3" style= "font-size: 30px;"> Genre </div>
+	<div class= "grid4" style= "font-size: 30px;">Year </div>
+	<div class= "grid5" style= "font-size: 30px;">Director </div>
+	<div class= "grid6" style= "font-size: 30px;">Star Actor(s) </div>
+	
+
+
+    #foreach($movie in $movies)
+        #if(!$header.equals("Pending Movies"))
+        <div class= "grid1" ><b><a class="book" href="/showMovies/$movie.movieID">$movie.title</a></b></div>
+            #else
+                <div class= "grid1" ><b><a class="book">$movie.title</a></b></div>
+        #end
+
+        ##        <a class="book" href="/movies/$movie.title">GOTO</a>
+        <div class= "grid2">$movie.PCo</div>
+        <div class= "grid3">$movie.genre</div>
+        <div class= "grid4">$movie.year</div>
+        <div class= "grid5">$movie.director</div>
+        <div class= "grid6">$movie.actors</div>
+
+        #if($header.equals("Pending Movies"))
+            <div class= "grid7">
+            <form method="post" action="/acceptFromPending/$movie.movieID">
+                <button>Accept</button>
+            </form>
+            </div>
+
+        <div class= "grid8">
+            <form method="post" action="/deleteFromPending/$movie.movieID">
+                <button>Reject</button>
+            </form>
+        </div>
+        #end
+    #end
+    
+   
+</div>
+
+ <footer> IMDbootleg, All Rights Reserved 2021. N9 Group </footer>
+ 
+ </body>
+ </html>

@@ -1,0 +1,38 @@
+<heading> <a href="/"> IMDbootleg </a> </heading>
+<ul>
+    <li><form method="post" action="/registerPage">
+        <button class="button">Register</button>
+    </form></li>
+    <li><form method="post" action="/showMoviesPage">
+        <button class= "button">Movies</button>
+    </form></li>
+    <form method="post" action="/searchPage">
+        <li><button class= "button">Search</button></li>
+    </form>
+    <form method="post" action="/handleRequest">
+        <li><button class= "button">Add movie</button></li>
+    </form>
+
+    #if($CURRENT_USER.accountType)
+        <form method="post" action="/logOut">
+            <li><button class= "button">Log Out</button></li>
+        </form>
+        #else
+            <li><form method="post" action="/loginPage">
+                <button class= "button">Login</button>
+            </form></li>
+    #end
+
+    #if ($CURRENT_USER.accountType == "ADMIN")
+        <form method="post" action="/pendingPage">
+            <li><button class= "button">Pending</button></li>
+        </form>
+    <li style="color:red">😡 $CURRENT_USER.email</li>
+    #end
+    #if ($CURRENT_USER.accountType == "PCO")
+        <li style="color:yellow">😁 $CURRENT_USER.email</li>
+    #end
+    #if ($CURRENT_USER.accountType == "USER")
+        <li style="color:white">☠️$CURRENT_USER.email</li>
+    #end
+</ul>

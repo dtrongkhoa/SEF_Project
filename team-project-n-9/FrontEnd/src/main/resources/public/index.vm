@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="style/n9.css">
+    <title>Movies</title>
+</head>
+
+
+
+##<body>
+##<heading> <a href="/"> IMDbootleg </a> </heading>
+##<ul>
+##<li><form method="post" action="/registerPage">
+##    <button class="button">Register</button>
+##</form></li>
+##<li><form method="post" action="/loginPage">
+##    <button class= "button">Login</button>
+##</form></li>
+##<li><form method="post" action="/showMoviesPage">
+##    <button class= "button">Movies</button>
+##</form></li>
+##<form method="post" action="/searchPage">
+##    <li><button class= "button">Search</button></li>
+##</form>
+##<form method="post" action="/movieRequest">
+##    <li><button class= "button">Request Movie</button></li>
+##</form>
+##<form method="post" action="/logOut">
+##    <li><button class= "button">Log Out</button></li>
+##</form>
+##    <li style="color:white">$CURRENT_USER</li>
+##</ul>
+#parse("public/layouts/header.vm")
+
+#if($WARNING)
+    <h2 style="color: red">$WARNING</h2>
+#end
+
+
+<h2> Welcome to IMDbootleg, you can make an <a href = "user/register.vm">account </a> with IMDbootleg or <a href="user/login.vm" >login </a> if you are already registered. </h2>
+<h2> You can also view <form method="post" action="/showMoviesPage">
+    <button class= "bigbutton">Movies</button>
+</form> we have on display! </h2>
+
+
+
+
+<footer style="position:fixed;"> IMDbootleg, All Rights Reserved 2021. N9 Group </footer>
+</body>
+</html>

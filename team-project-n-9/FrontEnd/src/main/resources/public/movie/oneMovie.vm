@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="../style/n9.css">
+    <title>Movies</title>
+</head>
+
+<body>
+
+##<heading> <a href="/"> IMDbootleg </a> </heading>
+##<ul>
+##    <li><form method="post" action="/registerPage">
+##        <button class="button">Register</button>
+##    </form></li>
+##    <li><form method="post" action="/loginPage">
+##        <button class= "button">Login</button>
+##    </form></li>
+##    <li><form method="post" action="/showMoviesPage">
+##        <button class= "button">Movies</button>
+##    </form></li>
+##    <form method="post" action="/searchPage">
+##        <li><button class= "button">Search</button></li>
+##    </form>
+##    <form method="post" action="/logOut">
+##        <li><button class= "button">Log Out</button></li>
+##    </form>
+##    <li style="color:white">$CURRENT_USER</li>
+##</ul>
+    #parse("public/layouts/header.vm")
+
+
+
+<h1>$movie.title</h1>
+<div class= "grid2">$movie.PCo</div>
+<div class= "grid3">$movie.genre</div>
+<div class= "grid4">$movie.year</div>
+<div class= "grid5">$movie.director</div>
+<div class= "grid6">$movie.actors</div>
+
+<img src="https://picsum.photos/200/300" alt="$movie.title">
+#if ($CURRENT_USER.accountType == "ADMIN")
+	<div> 
+		<form method="post" action="/deleteFromMain/$movie.movieID">
+                <button>Remove</button>
+    	</form>
+	</div>
+#end
+
+<footer> IMDbootleg, All Rights Reserved 2021. N9 Group </footer>
+
+
+</body>
+</html>

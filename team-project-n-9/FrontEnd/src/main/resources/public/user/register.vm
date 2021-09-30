@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="../style/n9.css">
+    <title>Movies</title>
+</head>
+
+
+
+<body>
+##<heading> <a href="/"> IMDbootleg </a> </heading>
+##<ul>
+##<li><form method="post" action="/registerPage">
+##    <button class="button">Register</button>
+##</form></li>
+##<li><form method="post" action="/loginPage">
+##    <button class= "button">Login</button>
+##</form></li>
+##<li><form method="post" action="/showMoviesPage">
+##    <button class= "button">Movies</button>
+##</form></li>
+##<form method="post" action="/searchPage">
+##    <li><button class= "button">Search</button></li>
+##</form>
+##<form method="post" action="/logOut">
+##    <li><button class= "button">Log Out</button></li>
+##</form>
+##	<li style="color:white">$CURRENT_USER</li>
+##</ul>
+    #parse("public/layouts/header.vm")
+
+
+<h2>Register:</h2>
+<form method="post" action="/handleRegister">
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" name ="email" required>
+                    <br><br>
+
+					<label for="password"><b>Password</b></label>
+                    <input type="password" name ="pass" required>
+                    <br><br>
+
+                    <label for="firstname"><b>FirstName</b></label>
+                    <input type="text" name ="firstname" required>
+                    <br><br>
+
+                    <label for="lastname"><b>LastName</b></label>
+                    <input type="text" name ="lastname" required>
+                    <br><br>
+                    
+                    <label for="gender"><b>Gender</b></label>
+                    <input type="text" name ="gender" required>
+                    <br><br>
+                    
+                    <label for="dob"><b>Date of Birth</b></label>
+                    <input type="text" name ="dob" required>
+                    <br><br>
+
+                    <label for="country"><b>Country</b></label>
+                    <input type="text" name ="country" required>
+                    <br><br>
+                    
+                     <select name="accountType" for="accountType">
+                        <option value="ADMIN">ADMIN</option>
+                        <option value="PCO">PCO</option>
+                        <option value="USER">USER</option>
+                    </select>
+
+                    <br><br>
+
+
+                    <input type="submit" value="Create">
+                    <br><br>
+</form>
+<footer style="position:fixed;"> IMDbootleg, All Rights Reserved 2021. N9 Group </footer>
+</body>
+</html>

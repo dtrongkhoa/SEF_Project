@@ -1,0 +1,91 @@
+body{
+   margin: 20px;
+   background-color: lightgray;
+}
+
+heading{
+   font-size: 80px; 
+   color: blue;
+   text-align: center;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+   font-size: 50px;
+   color: blue;
+}
+
+h2{
+   font-size: 40px;
+   color: black;
+   text-align: center;
+}
+
+
+ .grid1{grid-area: auto/1/ span 1/ span 1;}
+.grid2{grid-area: auto/2/span 1/span 1;}
+.grid3{grid-area:auto/3/span 1/span 1;}
+.grid4{grid-area:auto/4/span 1/span 1;} 
+.grid5{grid-area:auto/5/span 1/span 1}
+.grid6{grid-area:auto/6/span 1/span 1}
+
+.container{
+   display: grid;
+   grid-template-columns: auto auto auto auto auto auto ;
+   grid-gap: 10px;
+   border: 3px solid black;
+
+}
+
+footer {
+   position: relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: black;
+   text-align: center
+}
+
+.button{
+   background-color: white;
+   color: black;
+   padding: 15px 32px;
+   font-size: 25px;
+   margin: 4px 2px;
+   cursor: pointer;
+}
+.bigbutton{
+   background-color: white;
+   color: black;
+   padding: 15px 32px;
+   font-size: 30px;
+   margin: 4px 2px;
+   cursor: pointer;
+}
+.search{
+   text-align: center;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #333;
+ }
+ 
+ li {
+   float: left;
+ }
+ 
+ li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+ }
+ 
+ li a:hover {
+   background-color: #111;
+ }
